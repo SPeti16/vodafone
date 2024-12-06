@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.test.vodafone.ui.fragment.LoginFragment"
+        android:label="Login Fragment"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_fragment_to_offers_fragment"
+            app:destination="@id/offers_fragment"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/offers_fragment"
+        android:name="com.test.vodafone.ui.fragment.OffersFragment"
+        android:label="Offers Fragment"
+        tools:layout="@layout/fragment_offers" >
+        <action
+            android:id="@+id/action_offers_fragment_to_offers_datalis_fragment"
+            app:destination="@id/offers_datalis_fragment"
+        />
+        <action
+            android:id="@+id/action_offers_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/offers_fragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/offers_datalis_fragment"
+        android:name="com.test.vodafone.ui.fragment.OfferDatalisFragment"
+        android:label="Offers Datalis Fragment"
+        tools:layout="@layout/fragment_offer_datalis" >
+    </fragment>
+
+</navigation>
