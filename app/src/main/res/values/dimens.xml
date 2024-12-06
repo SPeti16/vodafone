@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_s">8.dp</dimen>
+    <dimen name="padding_m">16.dp</dimen>
+    <dimen name="padding_l">24.dp</dimen>
+    <dimen name="padding_xl">40.dp</dimen>
+</resources>
