@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.test.vodafone.R
 import com.test.vodafone.ui.viewmodel.OffersViewModel
@@ -27,8 +28,7 @@ class OffersFragment : Fragment(R.layout.fragment_offers) {
         }
 
         offersViewModel.offers.observe(viewLifecycleOwner, Observer { offers ->
-            // Itt kezelhetjük az ajánlatok listáját
-            // Például a RecyclerView-t frissíthetjük
+
         })
 
 

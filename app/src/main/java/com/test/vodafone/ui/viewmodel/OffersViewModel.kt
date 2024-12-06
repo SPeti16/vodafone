@@ -1,5 +1,6 @@
 package com.test.vodafone.ui.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -8,5 +9,5 @@ import javax.inject.Inject
 class OffersViewModel @Inject constructor(
 
 ): ViewModel() {
-    val offers = repository.getOffers()
+    var offers = MutableLiveData<List<String>>()//repository.getOffers()
 }
