@@ -2,7 +2,6 @@ package com.test.vodafone.ui.fragment
 
 import android.os.Bundle
 import android.view.View
-import androidx.compose.ui.window.isPopupLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.vodafone.R

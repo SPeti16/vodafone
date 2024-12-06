@@ -7,4 +7,6 @@
 
     <dimen name="text_size_button">18.sp</dimen>
     <dimen name="text_size_title">24.sp</dimen>
+
+    <dimen name="edit_text_height">48.dp</dimen>
 </resources>
