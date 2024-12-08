@@ -2,9 +2,9 @@ package com.test.vodafone
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.AndroidEntryPoint
 
-@HiltAndroidApp
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

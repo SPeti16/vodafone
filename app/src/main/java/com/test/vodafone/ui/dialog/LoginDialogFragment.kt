@@ -22,7 +22,5 @@ class LoginDialogFragment : BottomSheetDialogFragment(R.layout.dialog_fragment_l
                 findNavController().navigate(R.id.action_login_fragment_to_offers_fragment)
             }
         }
-
-
     }
 }

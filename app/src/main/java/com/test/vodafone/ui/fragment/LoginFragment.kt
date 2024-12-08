@@ -19,7 +19,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         guestButton.setOnClickListener {
-            findNavController().navigate(R.id.action_login_fragment_to_offers_fragment)
+            findNavController().navigate(
+                R.id.action_login_fragment_to_offers_fragment,
+                Bundle().apply { putString("user", "guest") }
+            )
         }
 
     }
