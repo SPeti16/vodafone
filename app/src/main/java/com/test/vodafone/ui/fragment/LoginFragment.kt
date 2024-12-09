@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.test.vodafone.R
@@ -35,7 +34,7 @@ class LoginFragment : Fragment(R.layout.fragment_login), LoginDialogResultListen
             )
         }
 
-        viewModel.detail.observe(viewLifecycleOwner, { username ->
+        viewModel.detail.observe(viewLifecycleOwner) { username ->
             if(username != "") {
                 if (username != "fail") {
                     findNavController().navigate(
@@ -46,7 +45,13 @@ class LoginFragment : Fragment(R.layout.fragment_login), LoginDialogResultListen
                     Toast.makeText(requireContext(), R.string.login_fail, Toast.LENGTH_LONG).show()
                 }
             }
-        })
+        }
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) { e ->
+            if(e != null) {
+                Toast.makeText(requireContext(), R.string.login_error, Toast.LENGTH_LONG).show()
+            }
+        }
 
     }
 

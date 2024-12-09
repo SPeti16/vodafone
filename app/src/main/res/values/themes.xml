@@ -3,9 +3,9 @@
 
 <!--    android:Theme.Material.LightNoActionBar-->
     <style name="Theme.Vodafone" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:fontFamily">@font/inter_regular</item>
+<!--        <item name="android:fontFamily">@font/inter_regular</item>-->
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">@style/TextAppearance.MyApp</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.MyApp</item>-->
     </style>
 
     <style name="TextAppearance.MyApp" parent="TextAppearance.MaterialComponents.Body1">

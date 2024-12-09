@@ -9,10 +9,29 @@
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
     <string name="login_fail">Invalid username or password</string>
+    <string name="login_username_not_email">Username has to been email</string>
+    <string name="login_fail_username">Empty username</string>
+    <string name="login_wrong_password">Must include 1 uppercase, 1 lowercase, 1 number, 1 special character, and be at least 8 characters long</string>
+    <string name="login_fail_password">Empty password</string>
+    <string name="login_different_password">The passwords do not match. Please ensure both passwords are identical.</string>
+    <string name="login_sign_up">Sign up</string>
+    <string name="login_agree">I agree to </string>
+    <string name="login_terms_and_conditions">Terms and Conditions</string>
+    <string name="login_sign_up_fail">We apologize, but the registration is currently unavailable;\nin the meantime, please feel free to use the app as a guest.</string>
+    <string name="login_error">An error occurred during login.</string>
 
     <string name="offers_title">Offers</string>
     <string name="offers_special_title">SpecialOffers</string>
     <string name="offers_log_out">Log out</string>
+    <string name="offers_error">An error occurred while fetching the offers data.</string>
 
     <string name="details_offers_back">Back</string>
+    <string name="details_offers_error">An error occurred while fetching the detailed offers data.</string>
+
+    <string name="aszf">Terms and Conditions\n\n
+            1. Your data will be used according to our privacy policy.\n
+            2. The app collects anonymous usage statistics.\n
+            3. By proceeding, you agree to these terms.</string>
+    <string name="aszf_back">Back</string>
+
 </resources>

@@ -2,33 +2,220 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/primery"
     android:padding="@dimen/padding_m">
 
-    <EditText
-        android:id="@+id/username_input"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/edit_text_height"
-        android:paddingHorizontal="@dimen/padding_m"
-        android:hint="@string/login_username"
-        android:background="@drawable/button_white"
-        android:inputType="textEmailAddress"/>
+        android:layout_height="24dp"
+        android:src="@drawable/vodafone_logo"
+        android:layout_marginBottom="@dimen/padding_m"
+        />
 
-    <EditText
-        android:id="@+id/password_input"
+    <FrameLayout
+        android:id="@+id/card_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/edit_text_height"
-        android:paddingHorizontal="@dimen/padding_m"
-        android:hint="@string/login_password"
-        android:background="@drawable/button_white"
-        android:inputType="textPassword"/>
+        android:layout_height="360dp"
+        android:layout_marginBottom="@dimen/padding_l"
+        android:layout_gravity="center"
+        >
+
+        <!-- Login -->
+        <LinearLayout
+            android:id="@+id/front_side"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/padding_m"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/background">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_til"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_layout_height"
+                android:layout_marginBottom="@dimen/padding_s"
+                app:hintEnabled="true"
+                android:gravity="center"
+                >
+
+                <EditText
+                    android:id="@+id/username_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:paddingHorizontal="@dimen/padding_m"
+                    android:hint="@string/login_username"
+                    android:background="@drawable/edit_text_white"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_til"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_layout_height"
+                android:layout_marginBottom="@dimen/padding_s"
+                app:hintEnabled="true"
+                android:gravity="center"
+                >
+                <EditText
+                    android:id="@+id/password_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:paddingHorizontal="@dimen/padding_m"
+                    android:hint="@string/login_password"
+                    android:background="@drawable/edit_text_white"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Sign up -->
+        <LinearLayout
+            android:id="@+id/back_side"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/padding_m"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/background"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_sign_up_til"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_layout_height"
+                android:layout_marginBottom="@dimen/padding_s"
+                app:hintEnabled="true"
+                android:gravity="center"
+                >
+                <EditText
+                    android:id="@+id/username_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:paddingHorizontal="@dimen/padding_m"
+                    android:hint="@string/login_username"
+                    android:background="@drawable/edit_text_white"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_sign_up_til"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_layout_height"
+                android:layout_marginBottom="@dimen/padding_s"
+                app:hintEnabled="true"
+                android:gravity="center"
+                >
+                <EditText
+                    android:id="@+id/password_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:paddingHorizontal="@dimen/padding_m"
+                    android:hint="@string/login_password"
+                    android:background="@drawable/edit_text_white"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_sign_up_again_til"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_layout_height"
+                android:layout_marginBottom="@dimen/padding_s"
+                app:hintEnabled="true"
+                android:gravity="center"
+                >
+                <EditText
+                    android:id="@+id/password_sign_up_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:paddingHorizontal="@dimen/padding_m"
+                    android:hint="@string/login_password"
+                    android:background="@drawable/edit_text_white"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/terms_and_conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_agree"
+                    />
+                <TextView
+                    android:id="@+id/terms_and_conditions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_terms_and_conditions"
+                    android:textColor="@color/blue"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Terms and conditions -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/termsAndConditions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/padding_m"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/background"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/aszf"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/aszf_back"
+                />
+            <TextView
+                android:id="@+id/aszf_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/aszf_back"
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_white"
-        android:textColor="@color/primery"
-        android:text="@string/login_login" />
+        android:layout_marginBottom="@dimen/padding_m"
+        android:background="@drawable/button_grey"
+        android:textColor="@color/grey_light"
+        android:text="@string/login_login"
+        android:enabled="false"
+        />
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_sign_up"
+        android:textColor="@color/white"
+        android:gravity="end"
+        />
 </LinearLayout>

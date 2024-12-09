@@ -18,12 +18,20 @@ class LoginViewModel @Inject constructor(
     private val _detailsData = MutableStateFlow("")
     val detail: LiveData<String> = _detailsData.asLiveData()
 
+    private val _errorMessage = MutableStateFlow<String?>(null)
+    val errorMessage: LiveData<String?> = _errorMessage.asLiveData()
+
     fun login(username: String, password: String){
         viewModelScope.launch{
-            if(server.apiRepository.getLogin().any(){it.username == username && it.password == password}){
-                _detailsData.value = username
-            }else{
+            try {
+                if (server.apiRepository.getLogin().any { it.username == username && it.password == password }) {
+                    _detailsData.value = username
+                } else {
+                    _detailsData.value = "fail"
+                }
+            }catch (e: Exception){
                 _detailsData.value = "fail"
+                _errorMessage.value = e.message
             }
         }
     }

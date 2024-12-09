@@ -1,5 +1,19 @@
 package com.test.vodafone
 
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
+import androidx.test.espresso.action.ViewActions.pressBack
+import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.isRoot
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -13,8 +27,8 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Rule
 import retrofit2.Retrofit
-import javax.inject.Inject
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -79,5 +93,57 @@ class ApiServiceTest {
         } catch (e: Exception) {
             fail("Failed to load user: ${e.message}")
         }
+    }
+
+}
+
+@RunWith(AndroidJUnit4::class)
+class MainActivityTest {
+
+    @get:Rule
+    val activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Test
+    fun testLogin() {
+        onView(withId(R.id.login_button)).perform(click())
+
+        onView(withId(R.id.username_input)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.username_input)).perform(typeText("test@email.hu"), closeSoftKeyboard())
+
+        onView(withId(R.id.password_input)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.password_input)).perform(typeText("1234"), closeSoftKeyboard())
+
+        onView(withId(R.id.login_button)).perform(click())
+
+        Thread.sleep(1000)
+
+        onView(withId(R.id.toolbar_title)).check(matches(withText(R.string.offers_title)))
+
+        var n = 0
+        var search = true
+        do {
+            onView(withId(R.id.special_offers_list))
+                .perform(
+                    RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(n, click())
+                )
+
+            Thread.sleep(1000)
+
+            onView(withId(R.id.toolbar_title))
+                .check { view, _ ->
+                    val titleText = (view as TextView).text.toString()
+                    if (titleText.isNotEmpty()) {
+                        search = false
+                    }
+                }
+
+            if (search) {
+                onView(isRoot()).perform(pressBack())
+            }
+
+            n++
+        }while (search)
     }
 }

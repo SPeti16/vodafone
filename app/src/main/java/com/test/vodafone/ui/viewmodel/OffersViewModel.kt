@@ -22,15 +22,22 @@ class OffersViewModel @Inject constructor(
     val offers: LiveData<List<OffersData>> = _offersList.asLiveData()
     private fun updateOffersData(list: List<OffersData>) = _offersList.update { list }
 
+    private val _errorMessage = MutableStateFlow<String?>(null)
+    val errorMessage: LiveData<String?> = _errorMessage.asLiveData()
+
     init {
         downloadOffers()
     }
 
     fun downloadOffers(){
         viewModelScope.launch{
-            val offers = server.apiRepository.getOffers()
-            updateOffersData(_emptyOffersList)
-            updateOffersData(offers)
+            try {
+                val offers = server.apiRepository.getOffers()
+                updateOffersData(_emptyOffersList)
+                updateOffersData(offers)
+            }catch (e: Exception){
+                _errorMessage.value = e.message
+            }
         }
     }
 

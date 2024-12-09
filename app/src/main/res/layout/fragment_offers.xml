@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/offers_title"
+                android:textSize="@dimen/text_size_button"
                 android:textColor="@color/primery"
                 android:gravity="start"
                 android:visibility="invisible"
@@ -37,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/offers_title"
+                android:textSize="@dimen/text_size_button"
                 android:layout_gravity="center"
                 android:gravity="center"
                 />
@@ -48,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/offers_log_out"
+                android:textSize="@dimen/text_size_button"
                 android:textColor="@color/primery"
                 android:gravity="end"
                 />
@@ -76,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/offers_title"
                     android:textSize="@dimen/text_size_title"
-                    android:fontFamily="@font/inter_bold"
+                    android:textStyle="bold"
                     />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/offers_list"
@@ -85,11 +88,12 @@
                     android:clipToPadding="false"
                     android:scrollbars="vertical" />
                 <TextView
+                    android:id="@+id/special_offers_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/offers_special_title"
                     android:textSize="@dimen/text_size_title"
-                    android:fontFamily="@font/inter_bold"
+                    android:textStyle="bold"
                     />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/special_offers_list"

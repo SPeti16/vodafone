@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.test.vodafone"
-        minSdk = 24
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.espresso.contrib)
     ksp(libs.hilt.compiler)
 
     // Retrofit
@@ -83,7 +84,8 @@ dependencies {
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     implementation(libs.okhttp)
 
-
+    //Picasso
+    implementation(libs.picasso)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

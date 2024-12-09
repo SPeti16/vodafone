@@ -21,10 +21,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="32dp"
-        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="@dimen/padding_l"
+        android:layout_marginHorizontal="@dimen/padding_m"
         app:cardElevation="8dp"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="@dimen/card_radius"
     >
         <LinearLayout
             android:orientation="vertical"

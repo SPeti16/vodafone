@@ -24,6 +24,8 @@ serializationJson = "1.6.3"
 serializationConverter = "1.0.0"
 serialization = "1.9.0"
 okhttp = "4.11.0"
+picasso = "2.71828"
+espressoContrib = "3.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -58,6 +60,9 @@ retrofit = { group ="com.squareup.retrofit2", name = "retrofit", version.ref = "
 kotlinx-serialization-json = { group ="org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationJson"}
 retrofit2-kotlinx-serialization-converter = { group ="com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter"}
 okhttp = { group ="com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp"}
+
+picasso = { group ="com.squareup.picasso", name = "picasso", version.ref = "picasso"}
+androidx-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoContrib" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

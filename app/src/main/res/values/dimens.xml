@@ -7,6 +7,16 @@
 
     <dimen name="text_size_button">18.sp</dimen>
     <dimen name="text_size_title">24.sp</dimen>
+    <dimen name="text_large_size">18.sp</dimen>
+    <dimen name="text_normal_size">16.sp</dimen>
+    <dimen name="text_small_size">12.sp</dimen>
+
+    <dimen name="card_radius">6.sp</dimen>
 
     <dimen name="edit_text_height">48.dp</dimen>
+    <dimen name="text_input_layout_height">96.dp</dimen>
+
+    <dimen name="item_card_height">116.dp</dimen>
+
+    <dimen name="special_offers_icon_size">200.px</dimen>
 </resources>
