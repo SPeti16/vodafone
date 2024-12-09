@@ -3,11 +3,19 @@ package com.test.vodafone.ui.dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.test.vodafone.R
 
 class LoginDialogFragment : BottomSheetDialogFragment(R.layout.dialog_fragment_login) {
+
+    private var callback: LoginDialogResultListener? = null
+
+    fun setLoginDialogResultListener(listener: LoginDialogResultListener) {
+        callback = listener
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -19,7 +27,8 @@ class LoginDialogFragment : BottomSheetDialogFragment(R.layout.dialog_fragment_l
             if (username_et.text.toString().isEmpty() || password_et.text.toString().isEmpty()) {
                 dismiss()
             } else {
-                findNavController().navigate(R.id.action_login_fragment_to_offers_fragment)
+                callback?.onDialogResult(username_et.text.toString(), password_et.text.toString())
+                dismiss()
             }
         }
     }

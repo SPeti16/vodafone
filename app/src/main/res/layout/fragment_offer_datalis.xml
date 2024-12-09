@@ -79,12 +79,15 @@
                     android:id="@+id/short_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     />
                 <TextView
                     android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    />
 
             </LinearLayout>
         </ScrollView>

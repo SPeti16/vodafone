@@ -8,10 +8,11 @@
 
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
+    <string name="login_fail">Invalid username or password</string>
 
-    <string name="offers_title">Offers</string>">
-    <string name="offers_special_title">SpecialOffers</string>">
-    <string name="offers_log_out">Log out</string>">
+    <string name="offers_title">Offers</string>
+    <string name="offers_special_title">SpecialOffers</string>
+    <string name="offers_log_out">Log out</string>
 
-    <string name="details_offers_back">Back</string>">
+    <string name="details_offers_back">Back</string>
 </resources>
